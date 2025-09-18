@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner entrada = new Scanner(System.in);
-        String url = "jdbc:postgresql://aws-1-sa-east-1.pooler.supabase.com:6543/postgres?user=postgres.lbzasioqvshncenahcrw&password=Mack123";
+        String url = "jdbc:postgresql://aws-1-sa-east-1.pooler.supabase.com:6543/postgres?user=postgres.lbzasioqvshncenahcrw&password=Mack10417095.";
 
         // abre conexão e instancia DAO
         Connection conexao = ConnectionFactory.getConnection(url);

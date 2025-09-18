@@ -1,13 +1,19 @@
-import java.sql.*;
-public class ConnectionFactory {
-    private ConnectionFactory (){
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-    }
-    public  static Connection getConnection(String url){
+public class ConnectionFactory {
+    private ConnectionFactory () {}
+
+    public static Connection getConnection(String url) {
         try {
+            Class.forName("org.postgresql.Driver"); // garante que o driver JDBC seja carregado
             return DriverManager.getConnection(url);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Driver do PostgreSQL não encontrado!");
+            return null;
         } catch (SQLException e) {
-            System.out.println("Erro ao obter conexão!");
+            System.out.println("Erro ao obter conexão: " + e.getMessage());
             return null;
         }
     }

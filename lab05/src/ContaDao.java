@@ -41,8 +41,7 @@ public class ContaDao implements IContaDao {
         while (resultados.next()) {
             long n = resultados.getLong("nro_conta");
             BigDecimal s = resultados.getBigDecimal("saldo");
-            Conta c = new Conta(n, s);
-            contas.add(c);
+            contas.add(new Conta(n, s));
         }
         return contas;
     }
